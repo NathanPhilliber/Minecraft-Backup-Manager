@@ -315,7 +315,7 @@ public class MBMDisplay extends JFrame{
 
       String answer = (String) JOptionPane.showInputDialog(null,"Select which world to remove",MBMDriver.appName, JOptionPane.WARNING_MESSAGE, null,options, options[0]);
 
-      if(answer.equals("- NONE -")){
+      if(answer == null || answer.equals("- NONE -")){
          return;
       }
 
@@ -356,7 +356,8 @@ public class MBMDisplay extends JFrame{
       }
 
       String answer = (String) JOptionPane.showInputDialog(null,"Which world would you like to restore?",MBMDriver.appName, JOptionPane.PLAIN_MESSAGE, null,options, options[0]);
-      if(answer.equals("- NONE -")){
+
+      if(answer == null || answer.equals("- NONE -")){
          return;
       }
 
@@ -382,7 +383,7 @@ public class MBMDisplay extends JFrame{
       }
 
       answer = (String) JOptionPane.showInputDialog(null,"Which backup would you like to restore?",MBMDriver.appName, JOptionPane.PLAIN_MESSAGE, null,options, options[0]);
-      if(answer.equals("- NONE -")){
+      if(answer == null || answer.equals("- NONE -")){
          return;
       }
       //Find minecraft save location
