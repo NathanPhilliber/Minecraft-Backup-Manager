@@ -279,9 +279,15 @@ public class MBMDisplay extends JFrame{
    if(saveDir.exists()){
        explorer.setCurrentDirectory(saveDir);
    }
-
-   //ADD WINDOWs ------------------------------------------------------------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+   else{
+      //Windows Check
+      saveDir = new File(System.getProperty("user.home")+"/AppData/Roaming/.minecraft/saves");
+      if(saveDir.exists()){
+         explorer.setCurrentDirectory(saveDir);
+     }
+   }
+   
+  
     //Prompt the user to pick a world file
     int returnVal = explorer.showOpenDialog(MBMDisplay.this);
     if(returnVal == JFileChooser.APPROVE_OPTION){
@@ -393,9 +399,15 @@ public class MBMDisplay extends JFrame{
       //Check if Mac exists
       if(saveDir.exists()){
          explorer.setCurrentDirectory(saveDir);
+         
       }
-
-//ADD WINDOWs ------------------------------------------------------------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+      else{
+         //Windows Check
+         saveDir = new File(System.getProperty("user.home")+"/AppData/Roaming/.minecraft/saves");
+         if(saveDir.exists()){
+            explorer.setCurrentDirectory(saveDir);
+        }
+      }
 
       explorer.setDialogTitle("Select Minecraft Saves Folder");
       int returnVal = explorer.showOpenDialog(MBMDisplay.this);
